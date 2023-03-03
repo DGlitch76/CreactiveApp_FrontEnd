@@ -12,6 +12,9 @@ import PhotoshootApprovalPage from './pages/PhotoshootApproval'
 
 function App() {
 
+  const [allProjects, setProjects] = useState();
+
+
   return (
     <div className="App">
 
@@ -23,9 +26,11 @@ function App() {
 
         <Route path="/profile" element={<ProfilePage />} />
 
-        <Route path="/newps" element={<NewPhotoshootPage />} />
+        <Route path="/api/projects" element={<AllProjectsPage allProjects={allProjects} setProjects={setProjects}/>} />
+
         <Route path="/:photographerId/photoshoot" element={<PhotoshootPage />} />
         <Route path="/:clientId/approval" element={<PhotoshootApprovalPage />} />
+        <Route path="/newps" element={<NewPhotoshootPage />} />
 
       </Routes>
 
