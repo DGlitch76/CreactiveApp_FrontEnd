@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import PrivateRoute from './components/PrivateRoute'
 
 import SignupPage from './pages/SignupPage'
 import LoginPage from './pages/LoginPage'
@@ -8,6 +9,7 @@ import ProfilePage from './pages/ProfilePage'
 import NewPhotoshootPage from './pages/NewPhotoshoot'
 import PhotoshootPage from './pages/PhotoshootPage'
 import PhotoshootApprovalPage from './pages/PhotoshootApproval'
+import AllProjectsPage from './pages/AllProjectsPage'
 
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
         <Route path='/signup' element={<SignupPage />} />
         <Route path='/login' element={<LoginPage />} />
 
-        <Route path="/profile" element={<privateRoute><ProfilePage /></privateRoute>} />
+        <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
 
         <Route path="/api/projects" element={<AllProjectsPage allProjects={allProjects} setProjects={setProjects}/>} />
 
