@@ -41,7 +41,7 @@ const LoginPage = () => {
      password={password}
      setPassword={setPassword}
      handleSubmit={handleSubmit}
-     isLogin={true} />
+     isLogin />
     </>
     )  
 }

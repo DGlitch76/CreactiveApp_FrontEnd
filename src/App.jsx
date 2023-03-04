@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage'
 import ProfilePage from './pages/ProfilePage'
 import PrivateRoute from './components/PrivateRoute'
 import './App.css'
+// import Logout from './components/Logout'
 
 function App() {
 

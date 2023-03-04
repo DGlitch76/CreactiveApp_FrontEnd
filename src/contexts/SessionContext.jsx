@@ -25,6 +25,7 @@ const SessionContextProvider = ({children}) => {
             window.localStorage.removeItem('authToken')
         }
      }
+     
 
     useEffect(()=>{
       const localToken = window.localStorage.getItem('authToken')   
