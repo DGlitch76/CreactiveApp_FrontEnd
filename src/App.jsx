@@ -10,7 +10,7 @@ import NewPhotoshootPage from './pages/NewPhotoshoot'
 import PhotoshootPage from './pages/PhotoshootPage'
 import PhotoshootApprovalPage from './pages/PhotoshootApproval'
 import AllProjectsPage from './pages/AllProjectsPage'
-
+import Navbar from './components/Navbar'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-
+    <Navbar/>
       <Routes>
         <Route path="/" element={<LandingPage />} />
 
