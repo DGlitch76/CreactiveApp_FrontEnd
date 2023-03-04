@@ -25,7 +25,7 @@ const SessionContextProvider = ({children}) => {
             window.localStorage.removeItem('authToken')
         }
      }
-     
+
 
     useEffect(()=>{
       const localToken = window.localStorage.getItem('authToken')   
@@ -43,6 +43,19 @@ const SessionContextProvider = ({children}) => {
          }
         }
     }, [token])
+
+    // const removeToken = () => {
+    //     window.localStorage.removeItem('authToken')
+    // }
+
+    // const logOutUser = () => {
+    //     removeToken() 
+    //     isAuthenticated()
+    // }
+
+    // useEffect(()=>{
+    //     isAuthenticated() 
+    // },[])
 
     return (
         <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading}}>

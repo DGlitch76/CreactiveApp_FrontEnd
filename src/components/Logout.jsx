@@ -4,25 +4,37 @@ import { SessionContext } from "../contexts/SessionContext"
 
 const ButtonLogout = () => {
     
-    const {setToken} = useContext(SessionContext)
-    const logout = ()=>{
-        setToken('')
-        window.localStorage.removeItem('authToken');
+    const removeToken = () => {
+        localStorage.removeItem('authToken')
     }
+
+    const logOutUser = () => {
+        removeToken() 
+        isAuthenticated()
+        logOutUser()
+    }
+    
+    // const {setToken} = useContext(SessionContext)
+    // const logout = ()=>{
+    //     setToken('')
+    //     window.localStorage.removeItem('authToken');
+    // }
         
-    useEffect(() => {
-        window.location = "/login";
-    }, []);
+    // useEffect(() => {
+    //     window.localStorage.removeItem('Token')
+    //     window.location.href = "/login";
+    // }, []);
+
     return (
     <>
     <form>
-        <button onClick={logout}>Logout</button>
+        <button onClick={ButtonLogout}>Logout</button>
     </form>
 
 
     </>
     )
-};
+    };
 
 export default ButtonLogout;
     
