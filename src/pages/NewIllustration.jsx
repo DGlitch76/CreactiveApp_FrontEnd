@@ -2,7 +2,7 @@ function NewIllustrationPage(){
 
     return(
     
-    <h1>CREATE NEW PHOTOSHOOT PROJECT</h1>
+    <h1>CREATE NEW ILLUSTRATION PROJECT</h1>
     
     )
     
