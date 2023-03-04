@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-
-import LandingPage from './pages/LandingPage'
+import PrivateRoute from './components/PrivateRoute'
 
 import SignupPage from './pages/SignupPage'
 import LoginPage from './pages/LoginPage'
@@ -12,9 +11,8 @@ import NewIllustrationPage from './pages/NewIllustration'
 
 import PhotoshootPage from './pages/PhotoshootPage'
 import PhotoshootApprovalPage from './pages/PhotoshootApproval'
-
 import AllProjectsPage from './pages/AllProjectsPage'
-
+import Navbar from './components/Navbar'
 
 function App() {
 
@@ -23,14 +21,14 @@ function App() {
 
   return (
     <div className="App">
-
+    <Navbar/>
       <Routes>
         <Route path="/" element={<LandingPage />} />
 
         <Route path='/signup' element={<SignupPage />} />
         <Route path='/login' element={<LoginPage />} />
 
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
 
         <Route path="/api/projects" element={<AllProjectsPage allProjects={allProjects} setProjects={setProjects}/>} />
 
@@ -38,9 +36,7 @@ function App() {
         <Route path="/api/approval/:projectId" element={<PhotoshootApprovalPage />} />
         <Route path="/newps" element={<NewPhotoshootPage />} />
 
-
-
-        <Route path="/newill" element={<NewIllustrationPage />} />
+        <Route path='*' element={<h1>404 Not Found</h1>} />
 
       </Routes>
 
