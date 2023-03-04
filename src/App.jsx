@@ -24,13 +24,15 @@ function App() {
         <Route path='/signup' element={<SignupPage />} />
         <Route path='/login' element={<LoginPage />} />
 
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile" element={<privateRoute><ProfilePage /></privateRoute>} />
 
         <Route path="/api/projects" element={<AllProjectsPage allProjects={allProjects} setProjects={setProjects}/>} />
 
         <Route path="/:photographerId/photoshoot" element={<PhotoshootPage />} />
         <Route path="/:clientId/approval" element={<PhotoshootApprovalPage />} />
         <Route path="/newps" element={<NewPhotoshootPage />} />
+
+        <Route path='*' element={<h1>404 Not Found</h1>} />
 
       </Routes>
 
