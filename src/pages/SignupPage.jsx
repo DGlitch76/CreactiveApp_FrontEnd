@@ -12,7 +12,9 @@ const SignupPage = () => {
     //send info to backend
     const handleSubmit = async() => {
         console.log({username, password})
-    const response = await fetch('http://localhost:5005/auth/signup',{
+
+        try{
+ const response = await fetch('http://localhost:5005/auth/signup',{
     method: 'POST',
     headers: {
         'Content-Type':'application/json'
@@ -23,7 +25,9 @@ const SignupPage = () => {
     if (response.status == 201) {
         navigate('/login')
     }
-    }
+        }catch(error){
+   console.log(error)
+    }}
     return (
     <>
     

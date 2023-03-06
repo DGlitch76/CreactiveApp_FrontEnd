@@ -26,11 +26,18 @@ const LoginPage = () => {
         const parsed = await response.json()
         console.log(parsed)
         setToken(parsed.token)
-        navigate('/profile')
+setTimeout(() => {
+    navigate('/profile')
+}, 250)
+
+      
+
         }catch(error){
             console.log.apply(error)
         }
     }
+
+
     return (
     <>
     

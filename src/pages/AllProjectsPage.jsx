@@ -16,7 +16,7 @@ function Projects({ allProjects, setProjects }) {
 
   //FETCH DATA FROM API
   useEffect(() => {
-    fetch(`https://localhost:5172/api/projects`)
+    fetch(`https://localhost:5173/api/projects`)
 
       .then((response) => response.json())
 
@@ -30,7 +30,6 @@ function Projects({ allProjects, setProjects }) {
       .finally(() => {
         setLoading(false);
       });
-
   }, []);
 
 
@@ -42,7 +41,7 @@ function Projects({ allProjects, setProjects }) {
   return (
     <div className="App container" style={{ display: 'flex', flexWrap: 'wrap' }}>
 
-      {allProjectss && allProjectss.map((Project) => (
+      {allProjects && allProjects.map((project) => (
         <>
           <div className="container" style={{ display: 'inline-block' }}>
             <Link to={`/project-details/${project._id} `}> <img src={project.image_url} alt={project.name} style={{ maxHeight: '150px' }} /></Link>

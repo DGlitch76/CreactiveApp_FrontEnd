@@ -5,10 +5,11 @@ export const SessionContext = createContext()
 const SessionContextProvider = ({children}) => {
     const [isLoading,setIsLoading ] = useState(true)
     const [token, setToken] = useState()
-    const [isAuthenticated, setisAuthenticated] = useState(false)
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
 
 //Verifying the local token
     const verifyToken = async(jwt) => {
+        if (jwt){
         try{
             await fetch('http://localhost:5005/auth/verify', {
               method: 'POST',
@@ -18,13 +19,13 @@ const SessionContextProvider = ({children}) => {
             })
             setToken(jwt)
             //to set when we got back a token from the local storage
-            setisAuthenticated(true) 
+            setIsAuthenticated(true) 
             setIsLoading(false)
         } catch (error){
             console.log(error)
             window.localStorage.removeItem('authToken')
         }
-     }
+     }}
 
 
     useEffect(()=>{
@@ -39,26 +40,14 @@ const SessionContextProvider = ({children}) => {
          window.localStorage.setItem('authToken', token) 
          //for the first login when we dont have any token in the computer
          if(!isAuthenticated){
-            setisAuthenticated(true) 
+            setIsAuthenticated(true) 
          }
         }
+        verifyToken(token)
     }, [token])
 
-    // const removeToken = () => {
-    //     window.localStorage.removeItem('authToken')
-    // }
-
-    // const logOutUser = () => {
-    //     removeToken() 
-    //     isAuthenticated()
-    // }
-
-    // useEffect(()=>{
-    //     isAuthenticated() 
-    // },[])
-
     return (
-        <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading}}>
+        <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading, setIsAuthenticated}}>
             {children}
         </SessionContext.Provider>
     )

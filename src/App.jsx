@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
 
+import LandingPage from './pages/LandingPage'
+
 import SignupPage from './pages/SignupPage'
 import LoginPage from './pages/LoginPage'
 import ProfilePage from './pages/ProfilePage'

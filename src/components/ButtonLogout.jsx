@@ -5,7 +5,8 @@ import { SessionContext } from "../contexts/SessionContext"
 
 const ButtonLogout = () => {
     const navigate=useNavigate()
-    const {isAuthenticated}=useContext(SessionContext)
+    const {isAuthenticated, setIsAuthenticated}=useContext(SessionContext)
+
     const removeToken = () => {
         localStorage.removeItem('authToken')
     }
@@ -13,7 +14,7 @@ const ButtonLogout = () => {
     const logOutUser = () => {
         navigateHome()
         removeToken() 
-        isAuthenticated(false)
+        setIsAuthenticated(false)
     }
     const navigateHome = () => {
         navigate('/')
@@ -32,10 +33,10 @@ const ButtonLogout = () => {
 
     return (
     <>
-    <form>
+
         {/* <button onClick={logOutUser();navigateHome()}>Logout</button> */}
-        <button onClick={logOutUser}>Logout</button>
-    </form>
+        <button type="button" onClick={logOutUser}>Logout</button>
+
 
 
     </>
