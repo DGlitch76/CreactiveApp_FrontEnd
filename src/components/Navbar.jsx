@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";           
 import { SessionContext } from "../contexts/SessionContext";
+import ButtonLogout from "./ButtonLogout";
 
 
 
@@ -13,13 +14,14 @@ function Navbar() {
             <button>Home</button>
           </Link>
      
-          {/*    UPDATE     */}
+          
           {isAuthenticated && (
             <>
               <Link to="/projects">
                 <button>Projects</button>
-              </Link>        
-              <button>Logout</button>
+              </Link>     
+              <ButtonLogout/>   
+              {/* <button onClick={ButtonLogout}>Logout</button> */}
             </>
           )}
      
