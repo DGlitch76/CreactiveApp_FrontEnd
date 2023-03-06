@@ -5,7 +5,7 @@ import PrivateRoute from './components/PrivateRoute'
 import SignupPage from './pages/SignupPage'
 import LoginPage from './pages/LoginPage'
 import ProfilePage from './pages/ProfilePage'
-
+import LandingPage from './pages/LandingPage'
 import NewPhotoshootPage from './pages/NewPhotoshoot'
 import NewIllustrationPage from './pages/NewIllustration'
 
