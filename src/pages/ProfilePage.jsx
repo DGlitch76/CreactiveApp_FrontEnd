@@ -1,10 +1,18 @@
-function ProfilePage(){
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { SessionContext } from '../contexts/SessionContext';
 
-    return(
-    
-    <h1>PROFILE PAGE</h1>
-    
-    )
-    }
-    
-    export default ProfilePage;
+function ProfilePage() {
+  const { token } = useContext(SessionContext);
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <h1>Profile Page</h1>
+      <p>Welcome, {token?.username}!</p>
+      <button onClick={() => navigate('/api/projects')}>All Projects</button>
+    </div>
+  );
+}
+
+export default ProfilePage;
