@@ -59,7 +59,7 @@ const AuthForm = ({username, password, email, setUsername, setPassword, setEmail
           />
           <Checkbox
             mt="md"
-            label="I agree to sell my privacy"
+            label="I agree with the privacy policy"
             {...form.getInputProps('termsOfService', { type: 'checkbox' })}
           />
           <Group position="right" mt="md">
