@@ -34,6 +34,7 @@ const AuthForm = ({username, password, email, setUsername, setPassword, setEmail
             withAsterisk
             label="Username"
             type='text'
+            placeholder="Your Username"
             value={username}
             onChange={event => setUsername(event.target.value)}
             
@@ -52,6 +53,7 @@ const AuthForm = ({username, password, email, setUsername, setPassword, setEmail
             withAsterisk
             label="Password"
             type="password"
+            placeholder="Your Password"
             value={password}
             onChange={event => setPassword(event.target.value)}
           />
