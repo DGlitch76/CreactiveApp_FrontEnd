@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import AuthForm from "../components/AuthForm"
 
+
 const SignupPage = () => {
     
     const navigate = useNavigate()
@@ -12,7 +13,7 @@ const SignupPage = () => {
 
     //send info to backend
     const handleSubmit = async() => {
-        console.log({username, password})
+        console.log({username, password, email})
 
         try{
  const response = await fetch('http://localhost:5005/auth/signup',{
@@ -20,7 +21,7 @@ const SignupPage = () => {
     headers: {
         'Content-Type':'application/json'
     },
-    body: JSON.stringify({username, password})
+    body: JSON.stringify({username, password, email})
     })
     //if the status is = 201(user created) go to login page
     if (response.status == 201) {
@@ -32,7 +33,7 @@ const SignupPage = () => {
     return (
     <>
     
-    <h1>Signup</h1>
+    <h1 style={{color: "#1EDFFD"}}>Signup</h1>
     <AuthForm 
      username={username} 
      setUsername={setUsername}

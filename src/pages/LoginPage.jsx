@@ -41,7 +41,7 @@ setTimeout(() => {
     return (
     <>
     
-    <h1>Login</h1>
+    <h1 style={{color: "#1EDFFD"}}>Login</h1>
     <AuthForm 
      username={username} 
      setUsername={setUsername} 
