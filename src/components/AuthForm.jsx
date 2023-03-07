@@ -36,6 +36,7 @@ const AuthForm = ({username, password, email, setUsername, setPassword, setEmail
             type='text'
             value={username}
             onChange={event => setUsername(event.target.value)}
+            
           />
           {!isLogin && (
             <TextInput
@@ -60,7 +61,7 @@ const AuthForm = ({username, password, email, setUsername, setPassword, setEmail
             {...form.getInputProps('termsOfService', { type: 'checkbox' })}
           />
           <Group position="right" mt="md">
-            <Button type="submit">{isLogin ? 'Login' : 'SignUp'}</Button>
+            <Button type="submit" style={{backgroundColor:"#1EDFFD" }}>{isLogin ? 'Login' : 'SignUp'}</Button>
           </Group>
         </form>
       </Box>
