@@ -15,6 +15,7 @@ import PhotoshootPage from './pages/PhotoshootPage'
 import PhotoshootApprovalPage from './pages/PhotoshootApproval'
 import AllProjectsPage from './pages/AllProjectsPage'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -41,7 +42,7 @@ function App() {
         <Route path='*' element={<h1>404 Not Found</h1>} />
 
       </Routes>
-
+    <Footer/>
     </div>
   )
 }
