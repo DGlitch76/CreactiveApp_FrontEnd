@@ -5,6 +5,7 @@ import ButtonLogout from "./ButtonLogout";
 
 
 
+
 function Navbar() {
     const { isAuthenticated, username } = useContext(SessionContext);
 
@@ -33,6 +34,7 @@ function Navbar() {
             </>
           )}
         </nav>
+        
         </div>
       );
     }
