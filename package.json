@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@mantine/core": "^6.0.0",
     "@mantine/hooks": "^6.0.0",
+    "@mui/joy": "^5.0.0-alpha.70",
     "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
@@ -25,4 +27,3 @@
     "vite": "^4.1.0"
   }
 }
-

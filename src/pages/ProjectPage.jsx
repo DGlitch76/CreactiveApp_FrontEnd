@@ -2,7 +2,7 @@ function PhotoshootPage(){
 
     return(
     
-    <h1>PHOTOSHOOT PAGE</h1>
+    <h1>PROJECT PAGE</h1>
     
     )
     

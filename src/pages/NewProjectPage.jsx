@@ -2,7 +2,7 @@ function NewPhotoshootPage(){
 
     return(
     
-    <h1>CREATE NEW PHOTOSHOOT PROJECT</h1>
+    <h1>CREATE NEW PROJECT</h1>
     
     )
     
