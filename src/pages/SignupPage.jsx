@@ -8,6 +8,7 @@ const SignupPage = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
 
     //send info to backend
     const handleSubmit = async() => {
@@ -34,7 +35,9 @@ const SignupPage = () => {
     <h1>Signup</h1>
     <AuthForm 
      username={username} 
-     setUsername={setUsername} 
+     setUsername={setUsername}
+     email={email} 
+     setEmail={setEmail}
      password={password}
      setPassword={setPassword}
      handleSubmit={handleSubmit}/>
