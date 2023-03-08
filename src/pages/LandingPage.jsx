@@ -1,10 +1,36 @@
 import React from 'react';
-import { Center } from '@mantine/core';
 import Carousel from 'react-bootstrap/Carousel';
-import { CardOverflow } from '@mui/joy';
 
 
-function LandingPage() {
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import ProjectCard from '../components/ProjectCard';
+
+
+
+function LandingPage({ allProjects, setProjects }) {
+
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+
+ //FETCH DATA FROM API
+ useEffect(() => {
+  fetch(`http://localhost:5005/projects`)
+    .then((response) => response.json())
+    .then((allProjects) => setProjects(allProjects))
+    .catch((err) => {
+      setError(err.message);
+      setProjects(null);
+    })
+    .finally(() => {
+      setLoading(false);
+    });
+}, []);
+
   return (<>
   <div style={{
     position:'absolute',
@@ -23,6 +49,7 @@ function LandingPage() {
   <h1>TRYING CENTER TITLE TEXT</h1>
   <p>Working on video // LANDING PAGE // problems with responsive... Nearly there!!</p>
   </div>
+  <div>
   <Carousel fade style={{marginTop:0, padding:0, position:'absolute', left:0, top:0, minHeight:'100vh'}}>
   <Carousel.Item>
     <video
@@ -42,7 +69,7 @@ function LandingPage() {
   </Carousel.Item>
   <Carousel.Item>
     <video
-      className="d-block vw-100 vh-100 center"
+      className="d-block vw-100 vh-100"
       autoPlay="true"
       loop="true"
       src="https://mdbootstrap.com/img/video/Lines.mp4"
@@ -58,6 +85,17 @@ function LandingPage() {
   </Carousel.Item>
   
 </Carousel>
+</div>
+// NOt working
+<div className="App container" style={{ display: 'flex', flexWrap: 'wrap' }}>
+     
+
+     {allProjects && allProjects.map((project) => (
+       <> 
+       <ProjectCard project={project} images={allProjects}/>
+     </>
+         ))}
+     </div>
 
     </>);
 }

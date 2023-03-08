@@ -50,7 +50,7 @@ function App() {
 
         <Route path="/projects" element={<AllProjectsPage allProjects={allProjects} setProjects={setProjects}/>} />
 
-        <Route path="/projects/:projectId" element={<ProjectPage />} />
+        <Route path="/projects/:projectId" element={<ProjectPage projects={allProjects} setProjects={setProjects}/>} />
 
         <Route path="/projects/new" element={<NewProjectPage />} />
 
