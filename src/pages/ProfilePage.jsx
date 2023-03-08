@@ -10,7 +10,7 @@ function ProfilePage() {
     <div>
       <h1>Profile Page</h1>
       <p>Welcome, {token?.username}!</p>
-      <button onClick={() => navigate('/api/projects')}>All Projects</button>
+      <button onClick={() => navigate('/projects')}>All Projects</button>
     </div>
   );
 }

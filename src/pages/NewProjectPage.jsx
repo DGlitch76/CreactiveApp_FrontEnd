@@ -12,7 +12,7 @@ function NewProjectPage() {
 
     try {
       const newProject = { name, description, image };
-      const response = await axios.post(`http://localhost:5005/api/projects/`, newProject);
+      const response = await axios.post(`http://localhost:5005/projects/`, newProject);
       console.log(response.data);
     } catch (error) {
       console.error(error);

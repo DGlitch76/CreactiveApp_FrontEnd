@@ -24,9 +24,9 @@ function App() {
         <Route path='/signup' element={<SignupPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
-        <Route path="/api/projects" element={<AllProjectsPage allProjects={allProjects} setProjects={setProjects}/>} />
-        <Route path="/api/projects/:projectId" element={<ProjectPage />} />
-        <Route path="/api/projects/new" element={<NewProjectPage />} />
+        <Route path="/projects" element={<AllProjectsPage allProjects={allProjects} setProjects={setProjects}/>} />
+        <Route path="/projects/:projectId" element={<ProjectPage />} />
+        <Route path="/projects/new" element={<NewProjectPage />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
       </Routes>
     </div>

@@ -7,13 +7,12 @@ function Navbar() {
     const { isAuthenticated, username } = useContext(SessionContext);
 
     return (
-      <div >
-        <nav >
+      <div>
+        <nav>
           <Link to="/">
             <button style={{color: "#1EDFFD"}}>Home</button>
           </Link>
      
-          
           {isAuthenticated && (
             <>
               <Link to="/projects">
@@ -31,9 +30,8 @@ function Navbar() {
             </>
           )}
         </nav>
-        
-        </div>
-      );
-    }
+      </div>
+    );
+  }
      
 export default Navbar;

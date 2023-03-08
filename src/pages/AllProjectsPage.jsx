@@ -8,7 +8,7 @@ function Projects({ allProjects, setProjects }) {
 
   //FETCH DATA FROM API
   useEffect(() => {
-    fetch(`http://localhost:5005/api/projects`)
+    fetch(`http://localhost:5005/projects`)
       .then((response) => response.json())
       .then((allProjects) => setProjects(allProjects))
       .catch((err) => {
@@ -26,7 +26,7 @@ function Projects({ allProjects, setProjects }) {
         allProjects.map((project) => (
           <div key={project._id}>
             <div className="container" style={{ display: 'inline-block' }}>
-              <Link to={`/api/projects/${project._id}`}>
+              <Link to={`/projects/${project._id}`}>
                 <img src={project.image_url} alt={project.name} style={{ maxHeight: '150px' }} />
               </Link>
             </div>
@@ -34,7 +34,7 @@ function Projects({ allProjects, setProjects }) {
               <h4>{project.name}</h4>
               <p>{project.tagline}</p>
               <span>{project.owner}</span>
-              <Link to={`/api/projects/${project._id}`}> DETAILS </Link>
+              <Link to={`/projects/${project._id}`}> DETAILS </Link>
             </div>
           </div>
         ))}
