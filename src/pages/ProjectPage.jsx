@@ -19,7 +19,7 @@ function ProjectPage() {
 
   return (
     <div>
-      <img src={project.image_url} alt={project.name} style={{ height: '25rem' }} />
+      <img src={project.images} alt={project.name} style={{ height: '25rem' }} />
       <h1>{project.name}</h1>
       <h2>{project.description}</h2>
       <h4>{project.client}</h4>
