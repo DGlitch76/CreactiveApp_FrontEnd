@@ -7,7 +7,6 @@ import Navbar from './components/Navbar'
 import LandingPage from './pages/LandingPage'
 import SignupPage from './pages/SignupPage'
 import LoginPage from './pages/LoginPage'
-import LandingPage from './pages/LandingPage'
 import ProfilePage from './pages/ProfilePage'
 import ProjectPage from './pages/ProjectPage'
 import AllProjectsPage from './pages/AllProjectsPage'
@@ -19,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path='/signup' element={<SignupPage />} />

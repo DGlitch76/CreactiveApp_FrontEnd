@@ -1,6 +1,11 @@
-function LoginPage(){
+import { useNavigate } from "react-router-dom"
+import { useContext,useState } from "react"
+import AuthForm from "../components/AuthForm"
+import { SessionContext } from "../contexts/SessionContext"
 
-    return(
+
+const LoginPage = () => {
+    const navigate = useNavigate()
     
     const {setToken} = useContext(SessionContext)
 
@@ -22,7 +27,7 @@ function LoginPage(){
         console.log(parsed)
         setToken(parsed.token)
         setTimeout(() => {
-            navigate('/profile')
+        navigate('/profile')
         }, 250)
 
         }catch(error){
@@ -32,7 +37,7 @@ function LoginPage(){
 
     return (
     <>
-    <h1>Login</h1>
+    <h1 style={{color: "#1EDFFD"}}>Login</h1>
     <AuthForm 
      username={username} 
      setUsername={setUsername} 
@@ -41,7 +46,7 @@ function LoginPage(){
      handleSubmit={handleSubmit}
      isLogin />
     </>
-    )  
+    )
 }
 
 export default LoginPage

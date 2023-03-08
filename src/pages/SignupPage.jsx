@@ -1,10 +1,47 @@
-function SignupPage(){
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+import AuthForm from "../components/AuthForm"
 
-    return(
+const SignupPage = () => {
     
-    <h1>SIGNUP PAGE</h1>
-    
-    )
+    const navigate = useNavigate()
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
+
+    //send info to backend
+    const handleSubmit = async() => {
+        console.log({username, password, email})
+
+        try{
+ const response = await fetch('http://localhost:5005/auth/signup',{
+    method: 'POST',
+    headers: {
+        'Content-Type':'application/json'
+    },
+    body: JSON.stringify({username, password, email})
+    })
+    //if the status is = 201(user created) go to login page
+    if (response.status == 201) {
+        navigate('/login')
     }
-    
-    export default SignupPage;
+        }catch(error){
+   console.log(error)
+    }}
+    return (
+    <>
+    <h1 style={{color: "#1EDFFD"}}>Signup</h1>
+    <AuthForm 
+     username={username} 
+     setUsername={setUsername}
+     email={email} 
+     setEmail={setEmail}
+     password={password}
+     setPassword={setPassword}
+     handleSubmit={handleSubmit}/>
+    </>
+    )  
+}
+
+export default SignupPage
