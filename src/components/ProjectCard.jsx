@@ -41,7 +41,7 @@ function ProjectCard( {project}) {
       <CardMedia
         component="img"
         height="194"
-        image={default_project_image}
+        image={project.images[0]?project.images[0]:default_project_image}
         alt="Image Alt Text"
       />
       <CardHeader
