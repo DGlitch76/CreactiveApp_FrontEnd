@@ -72,7 +72,7 @@ function TopNav(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{ bgcolor:'#222222'}}>
         <Toolbar>
           <IconButton
             color="inherit"

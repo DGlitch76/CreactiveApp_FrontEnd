@@ -31,7 +31,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" style={{marginTop:0, padding:0 }}>
     {/* MUI Drawer  */}
 
     <TopNav/>
