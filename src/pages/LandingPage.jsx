@@ -7,11 +7,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
+import { Center } from '@mantine/core';
 
 
 
 function LandingPage({ allProjects, setProjects }) {
 
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,6 +38,17 @@ function LandingPage({ allProjects, setProjects }) {
 }, []);
 
   return (<>
+
+  <div>
+  <Carousel 
+  activeIndex={index} onSelect={handleSelect}
+  fade style={{marginTop:0,
+  padding:0,
+  position:'relative',
+  left:0, top:-100,
+  minHeight:'100vh'}}>
+
+  <Carousel.Item>
   <div style={{
     position:'absolute',
     left:0,top:0,
@@ -49,9 +66,6 @@ function LandingPage({ allProjects, setProjects }) {
   <h1>TRYING CENTER TITLE TEXT</h1>
   <p>Working on video // LANDING PAGE // problems with responsive... Nearly there!!</p>
   </div>
-  <div>
-  <Carousel fade style={{marginTop:0, padding:0, position:'absolute', left:0, top:0, minHeight:'100vh'}}>
-  <Carousel.Item>
     <video
       className="d-block vw-100 vh-100 center"
       autoPlay="true"
@@ -68,11 +82,28 @@ function LandingPage({ allProjects, setProjects }) {
     </Carousel.Caption> */}
   </Carousel.Item>
   <Carousel.Item>
+  <div style={{
+    position:'absolute',
+    left:0,top:0,
+    width:'100vw',
+    height:'100vh',
+    margin:'auto',
+    zIndex:10,
+    display:'flex',
+    columnWidth:'100vw',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    color:'white'
+    }}>
+  <h1>THIS IS SLIDE TWO</h1>
+  <p>Controllers Working</p>
+  </div>
     <video
       className="d-block vw-100 vh-100"
       autoPlay="true"
       loop="true"
-      src="https://mdbootstrap.com/img/video/Lines.mp4"
+      src="https://static.vecteezy.com/system/resources/previews/004/827/128/mp4/abstract-motion-digital-background-digital-data-tunnel-made-of-digital-nodes-futuristic-technology-abstract-background-with-lines-for-network-big-data-server-internet-speed-seamless-loop-free-video.mp4"
       alt="First slide"
     style={{
       objectFit: 'cover',
@@ -86,8 +117,14 @@ function LandingPage({ allProjects, setProjects }) {
   
 </Carousel>
 </div>
-// NOt working
-<div className="App container" style={{ display: 'flex', flexWrap: 'wrap' }}>
+
+<div className="App container"
+style={{
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap:20,
+  justifyContent:'center',
+  }}>
      
 
      {allProjects && allProjects.map((project) => (

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 
+import default_project_image from '../assets/default_project_image.jpeg';
+
 function ProjectPage({ projects, setProjects }) {
   const { projectId } = useParams();
 
@@ -23,10 +25,16 @@ function ProjectPage({ projects, setProjects }) {
 
   return (
     <>
-      <div className="App container" style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div className="App container"
+      style={{
+        display:
+        'flex',
+        flexWrap:'wrap',
+        marginBottom:100
+        }}>
         {projects && projects.filter((project) => project._id === projectId).map((project) => (
           <div>
-            <img src={project.images[0]} alt={project.name} style={{ height: '25rem' }} />
+            <img src={project.images[0]?project.images[0]:default_project_image} alt={project.name} style={{ height: '25rem' }} />
             <h1>{project.name}</h1>
             <h2>{project.description}</h2>
             <h4>{project.client}</h4>

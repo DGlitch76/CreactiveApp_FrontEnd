@@ -33,7 +33,14 @@ function Projects({ allProjects, setProjects }) {
 
 
   return (<>
-    <div className="App container" style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <div className="App container"
+    style={{
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap:40,
+      justifyContent:'center',
+      alignSelf:'flex-start',
+      marginTop:50}}>
      
 
       {allProjects && allProjects.map((project) => (
