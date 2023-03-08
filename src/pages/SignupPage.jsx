@@ -30,7 +30,15 @@ const SignupPage = () => {
    console.log(error)
     }}
     return (
-    <>
+        <div style={{ display: 'flex' }}>
+        <div style={{ flex: 1 }}>
+          <img
+            src="https://img.freepik.com/fotos-premium/fondo-acuarela-azul-pastel_199112-157.jpg"
+            alt="Imagem lateral"
+            style={{ position: 'fixed', top: 0, bottom: 0, left: 0, width: '40%' }}
+          />
+        </div>
+        <div style={{ flex: 1.5}}>
     <AuthForm 
      username={username} 
      setUsername={setUsername} 
@@ -38,9 +46,11 @@ const SignupPage = () => {
      email={email}
      setEmail={setEmail}
      setPassword={setPassword}
-     handleSubmit={handleSubmit}/>
-    </>
-    )  
-}
+     handleSubmit={handleSubmit}
+     />
+          </div>
+        </div>
+      );
+    };
 
 export default SignupPage

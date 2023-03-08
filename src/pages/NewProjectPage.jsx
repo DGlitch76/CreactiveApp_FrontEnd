@@ -5,12 +5,23 @@ import axios from 'axios';
 function NewProjectPage() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
+  const [images, setImages] = useState('');
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // onImages(e, project._id)
+
+    let images = event.target.images.files[0];
+    let formData = new FormData();
+    formData.append("imageUrl", images);
+    formData.append("name", name);
+    formData.append("description", description);
+
     try {
-      const newProject = { name, description, image };
-      const response = await axios.post(`http://localhost:5005/projects/new`, newProject);
+      const newProject = { name, description, images };
+      const response = await axios.post(`http://localhost:5005/projects/new`, formData);
+      setImages(response.data)
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -18,7 +29,7 @@ function NewProjectPage() {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} enctype="multipart/form-data" >
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name
@@ -45,14 +56,14 @@ function NewProjectPage() {
         </div>
         <div className="mb-3">
           <label htmlFor="image" className="form-label">
-            Image
+            Images
           </label>
           <input
-            type="text"
+            type="file"
             className="form-control"
             id="exampleInputEmail1"
-            value={image}
-            onChange={(event) => setImage(event.target.value)}
+            accept="image/png, image/jpg, image/jpeg"
+            name="images"
           />
         </div>
         <button type="submit" className="btn btn-primary">

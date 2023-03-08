@@ -36,17 +36,27 @@ const LoginPage = () => {
     }
 
     return (
-    <>
-    <h1>Login</h1>
-    <AuthForm 
-     username={username} 
-     setUsername={setUsername} 
-     password={password}
-     setPassword={setPassword}
-     handleSubmit={handleSubmit}
-     isLogin />
-    </>
-    )  
-}
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: 1 }}>
+            <img
+              src="https://img.freepik.com/fotos-premium/fondo-acuarela-azul-pastel_199112-157.jpg"
+              alt="Imagem lateral"
+              style={{ position: 'fixed', top: 0, bottom: 0, left: 0, width: '40%' }}
+            />
+          </div>
+          <div style={{ flex: 1.5 }}>
+            
+            <AuthForm
+              username={username}
+              setUsername={setUsername}
+              password={password}
+              setPassword={setPassword}
+              handleSubmit={handleSubmit}
+              isLogin
+            />
+          </div>
+        </div>
+      );
+    };
 
 export default LoginPage

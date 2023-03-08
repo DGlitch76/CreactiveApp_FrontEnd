@@ -25,7 +25,7 @@ function App() {
   const [allProjects, setProjects] = useState();
 
   return (
-    <div className="App">
+    <div className="App" style={{marginTop:0, padding:0 }}>
     {/* MUI Drawer  */}
 
     <TopNav/>
@@ -43,7 +43,7 @@ function App() {
 
         <Route path="/projects" element={<AllProjectsPage allProjects={allProjects} setProjects={setProjects}/>} />
 
-        <Route path="/projects/:projectId" element={<ProjectPage />} />
+        <Route path="/projects/:projectId" element={<ProjectPage projects={allProjects} setProjects={setProjects}/>} />
 
         <Route path="/projects/new" element={<NewProjectPage />} />
 

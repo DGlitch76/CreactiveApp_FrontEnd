@@ -15,6 +15,8 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+import { Link } from 'react-router-dom';
+
 import default_project_image from '../assets/default_project_image.jpeg';
 
 const ExpandMore = styled((props) => {
@@ -38,12 +40,14 @@ function ProjectCard( {project}) {
   return (
 
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
+      <Link to={`/projects/${project._id}`}>
+        <CardMedia
         component="img"
         height="194"
-        image={default_project_image}
+        image={project.images[0]?project.images[0]:default_project_image}
         alt="Image Alt Text"
       />
+      </Link>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

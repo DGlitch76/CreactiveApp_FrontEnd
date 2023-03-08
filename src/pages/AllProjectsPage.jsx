@@ -34,7 +34,7 @@ function Projects({ allProjects, setProjects }) {
 
       {allProjects && allProjects.map((project) => (
         <> 
-        <ProjectCard project={project}/>
+        <ProjectCard project={project} images={allProjects}/>
       </>
           ))}
           <button onClick={() => navigate('/projects/new')}>Create your Project</button>
