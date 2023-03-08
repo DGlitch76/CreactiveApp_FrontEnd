@@ -4,9 +4,6 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
 
-
-
-
 // Ref doc https://blog.logrocket.com/modern-api-data-fetching-methods-react/
 
 function Projects({ allProjects, setProjects }) {
@@ -29,8 +26,6 @@ function Projects({ allProjects, setProjects }) {
       setLoading(false);
     });
 }, []);
-
-
 
   return (<>
     <div className="App container" style={{ display: 'flex', flexWrap: 'wrap' }}>

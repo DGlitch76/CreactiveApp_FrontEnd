@@ -31,8 +31,6 @@ const SignupPage = () => {
     }}
     return (
     <>
-    
-
     <AuthForm 
      username={username} 
      setUsername={setUsername} 

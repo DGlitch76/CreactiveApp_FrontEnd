@@ -1,6 +1,5 @@
-import { TextInput,Center, Checkbox, Button, Group, Box } from '@mantine/core';
+import { TextInput, Center, Checkbox, Button, Group, Box } from '@mantine/core';
 import { useForm } from '@mantine/form';
-
 
 const AuthForm = ({username, password, email, setUsername, setPassword, setEmail, handleSubmit, isLogin = false}) => {
     const form = useForm({
@@ -68,7 +67,7 @@ const AuthForm = ({username, password, email, setUsername, setPassword, setEmail
         </form>
       </Box>
       
-        </>
+      </>
     )
 }
 

@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { SessionContext } from '../contexts/SessionContext';
 // import { useState, useEffect } from 'react'
 
-
-
 function ProfilePage() {
   const { token } = useContext(SessionContext);
   const navigate = useNavigate();

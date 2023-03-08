@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+
 function ProjectPage() {
   const [project, setProject] = useState({});
   const { projectId } = useParams();
@@ -15,6 +16,7 @@ function ProjectPage() {
     }
     fetchProject();
   }, [projectId]);
+
   return (
     <div>
       <img src={project.image_url} alt={project.name} style={{ height: '25rem' }} />
@@ -26,4 +28,5 @@ function ProjectPage() {
     </div>
   );
 }
+
 export default ProjectPage

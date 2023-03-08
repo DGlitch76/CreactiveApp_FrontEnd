@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
+
 function NewProjectPage() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -61,4 +62,5 @@ function NewProjectPage() {
     </div>
   );
 }
+
 export default NewProjectPage;

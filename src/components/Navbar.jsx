@@ -1,11 +1,7 @@
-
 import { Link } from "react-router-dom";
 import { useContext } from "react";           
 import { SessionContext } from "../contexts/SessionContext";
 import ButtonLogout from "./ButtonLogout";
-
-
-
 
 function Navbar() {
     const { isAuthenticated, username } = useContext(SessionContext);
@@ -16,8 +12,7 @@ function Navbar() {
           <Link to="/">
             <button style={{color: "#1EDFFD"}}>Home</button>
           </Link>
-     
-          
+
           {isAuthenticated && (
             <>
               <Link to="/projects">
@@ -35,9 +30,8 @@ function Navbar() {
             </>
           )}
         </nav>
-        
-        </div>
-      );
-    }
+      </div>
+    );
+  }
      
-    export default Navbar;
+export default Navbar;

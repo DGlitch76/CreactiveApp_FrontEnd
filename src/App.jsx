@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
@@ -21,14 +20,9 @@ import Footer from './components/Footer'
 import logo from "./assets/logo_primary.svg";
 
 
-
 function App() {
 
-
-
-
   const [allProjects, setProjects] = useState();
-
 
   return (
     <div className="App">
@@ -38,12 +32,11 @@ function App() {
 
 {/* {!isAuthenticated ? (<TopNav/>): (<Navbar/>)} */}
  
-
-
       <Routes>
         <Route path="/" element={<LandingPage />} />
 
         <Route path='/signup' element={<SignupPage />} />
+
         <Route path='/login' element={<LoginPage />} />
 
         <Route path="/profile" element={<PrivateRoute><ProfilePage/></PrivateRoute>} />
@@ -55,8 +48,7 @@ function App() {
         <Route path="/projects/new" element={<NewProjectPage />} />
 
         <Route path='*' element={<h1>404 Not Found</h1>} />
-
-</Routes>
+      </Routes>
 
       <Footer/>
 
@@ -65,4 +57,3 @@ function App() {
 }
 
 export default App;
-

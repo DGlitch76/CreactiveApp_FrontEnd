@@ -124,7 +124,7 @@ function TopNav(props) {
       </Box>
     </Box>
 
+  )
+};
 
-  )};
-
-  export default TopNav;
+export default TopNav;

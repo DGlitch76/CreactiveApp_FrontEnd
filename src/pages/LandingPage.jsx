@@ -2,20 +2,15 @@ import React from 'react';
 import { Center } from '@mantine/core';
 
 function LandingPage() {
-
-
-
-
-
+    
     return (
-
-<Center>
+    <Center>
 
         <div style={{display:'flex', justifyContent:'center', alignSelf:'center', marginTop:100}}>
             <h1 style={{ color: 'black' }}>LANDING PAGE</h1>
         </div>
 
-</Center>
+    </Center>
     )
 }
 

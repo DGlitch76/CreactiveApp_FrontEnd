@@ -2,7 +2,6 @@ import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { SessionContext } from "../contexts/SessionContext"
 
-
 const ButtonLogout = () => {
     const navigate=useNavigate()
     const {isAuthenticated, setIsAuthenticated}=useContext(SessionContext)
@@ -22,14 +21,10 @@ const ButtonLogout = () => {
 
     return (
     <>
-
         {/* <button onClick={logOutUser();navigateHome()}>Logout</button> */}
         <button type="button" onClick={logOutUser}>Logout</button>
-
-
-
     </>
     )
-    };
+};
 
 export default ButtonLogout;

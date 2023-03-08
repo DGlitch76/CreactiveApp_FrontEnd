@@ -26,21 +26,17 @@ const LoginPage = () => {
         const parsed = await response.json()
         console.log(parsed)
         setToken(parsed.token)
-setTimeout(() => {
-    navigate('/profile')
-}, 250)
-
-      
+        setTimeout(() => {
+        navigate('/profile')
+        }, 250)
 
         }catch(error){
-            console.log.apply(error)
+        console.log.apply(error)
         }
     }
 
-
     return (
     <>
-    
     <h1>Login</h1>
     <AuthForm 
      username={username} 
