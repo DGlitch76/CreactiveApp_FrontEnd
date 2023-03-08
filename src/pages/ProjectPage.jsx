@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import default_project_image from '../assets/default_project_image.jpeg';
 
-import default_project_image from '../assets/default_project_image.jpeg';
-
 function ProjectPage({ projects, setProjects }) {
   const { projectId } = useParams();
 
