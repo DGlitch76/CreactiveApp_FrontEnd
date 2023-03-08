@@ -33,7 +33,7 @@ function App() {
 {/* {!isAuthenticated ? (<TopNav/>): (<Navbar/>)} */}
  
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage allProjects={allProjects} setProjects={setProjects} />} />
 
         <Route path='/signup' element={<SignupPage />} />
 

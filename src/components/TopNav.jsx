@@ -31,7 +31,7 @@ const navItems = [
     { text: 'Login', href: '/login' }
 ];
 
-const navItemsIsAuthenticate = [
+const navItems2 = [
   { text: 'Home', href: '/' },
   { text: 'Creative Profiles', href: '/projects' },
   { text: 'Proofing Room', href: '/ext' },
@@ -57,6 +57,23 @@ function TopNav(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }} component="a" href={item.href}>
+              <ListItemText primary={item.text}  />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+  const drawer2 = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        CreactiveApp
+      </Typography>
+      <Divider />
+      <List>
+        {navItems2.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }} component="a" href={item.href}>
               <ListItemText primary={item.text}  />
