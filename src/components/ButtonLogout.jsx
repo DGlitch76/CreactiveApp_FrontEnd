@@ -19,17 +19,6 @@ const ButtonLogout = () => {
     const navigateHome = () => {
         navigate('/')
     }
-    // const {setToken} = useContext(SessionContext)
-    // const logout = ()=>{
-    //     setToken('')
-    //     window.localStorage.removeItem('authToken');
-    // }
-
-     
-    // useEffect(() => {
-    //     window.localStorage.removeItem('Token')
-    //     window.location.href = "/login";
-    // }, []);
 
     return (
     <>
@@ -44,6 +33,3 @@ const ButtonLogout = () => {
     };
 
 export default ButtonLogout;
-    
-    
-

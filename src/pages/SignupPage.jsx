@@ -8,6 +8,7 @@ const SignupPage = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
 
     //send info to backend
     const handleSubmit = async() => {
@@ -19,7 +20,7 @@ const SignupPage = () => {
     headers: {
         'Content-Type':'application/json'
     },
-    body: JSON.stringify({username, password})
+    body: JSON.stringify({username, password, email})
     })
     //if the status is = 201(user created) go to login page
     if (response.status == 201) {
@@ -31,11 +32,13 @@ const SignupPage = () => {
     return (
     <>
     
-    <h1>Signup</h1>
+
     <AuthForm 
      username={username} 
      setUsername={setUsername} 
      password={password}
+     email={email}
+     setEmail={setEmail}
      setPassword={setPassword}
      handleSubmit={handleSubmit}/>
     </>
