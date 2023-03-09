@@ -1,7 +1,7 @@
 import '../index.css'
 
 import { useState, useEffect } from 'react'
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 import Box from '@mui/material/Box';
 
@@ -12,7 +12,7 @@ import default_project_image from '../assets/default_project_image.jpeg';
 function ProjectPage({ projects, setProjects }) {
   const { projectId } = useParams();
 
-  
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -30,6 +30,13 @@ function ProjectPage({ projects, setProjects }) {
         setLoading(false);
       });
   }, []);
+
+
+  const handleDelete = (currentProjectId) => {
+    fetch(`http://localhost:5005/projects/${currentProjectId}`, {method: 'DELETE'})
+    navigate('/projects');
+  };
+
 
   return (
     <> <Box sx={{  display: 'flex', flexDirection:{xs:'column'}, flexWrap:'wrap'}}>
