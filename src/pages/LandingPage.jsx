@@ -171,9 +171,9 @@ function LandingPage({ allProjects, setProjects }) {
 
 
       {allProjects && allProjects.map((project) => (
-        <>
+        <div key={project._id}>
           <ProjectCard project={project} images={allProjects} />
-        </>
+        </div>
       ))}
     </div>
 
