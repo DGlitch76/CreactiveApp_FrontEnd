@@ -1,3 +1,5 @@
+import '../index.css'
+
 import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { SessionContext } from "../contexts/SessionContext"

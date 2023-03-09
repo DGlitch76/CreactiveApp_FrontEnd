@@ -1,3 +1,5 @@
+import '../index.css'
+
 import { TextInput,Center, Checkbox, Button, Group, Box } from '@mantine/core';
 import { useForm } from '@mantine/form';
 

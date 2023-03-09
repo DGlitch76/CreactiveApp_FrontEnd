@@ -14,15 +14,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
 //originally in the Navbar component
 import { Link } from "react-router-dom";
-import { useContext } from "react";           
+import { useContext } from "react";
 import { SessionContext } from "../contexts/SessionContext";
 import ButtonLogout from "./ButtonLogout";
-
 const drawerWidth = '100vw';
-
 const navItems = [
     { text: 'Home', href: '/' },
     { text: 'Creative Profiles', href: '/projects' },
@@ -30,25 +27,19 @@ const navItems = [
     { text: 'Signup', href: '/signup' },
     { text: 'Login', href: '/login' }
 ];
-
 const navItems2 = [
   { text: 'Home', href: '/' },
   { text: 'Creative Profiles', href: '/projects' },
   { text: 'Proofing Room', href: '/ext' },
   { text: 'Logout', href: '/' },
-
 ];
-
-
 function TopNav(props) {
   const { isAuthenticate } = useContext(SessionContext);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -57,7 +48,7 @@ function TopNav(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.text} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }} component="a" href={item.href}>
               <ListItemText primary={item.text}  />
             </ListItemButton>
@@ -74,7 +65,7 @@ function TopNav(props) {
       <Divider />
       <List>
         {navItems2.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.text} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }} component="a" href={item.href}>
               <ListItemText primary={item.text}  />
             </ListItemButton>
@@ -83,9 +74,7 @@ function TopNav(props) {
       </List>
     </Box>
   );
-
   const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -109,10 +98,9 @@ function TopNav(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }} component="a" href={item.href}>
+              <Button key={item.text} sx={{ color: '#fff' }} component="a" href={item.href}>
                 {item.text}
               </Button>
-
             ))}
        <ButtonLogout/>
           </Box>
@@ -137,11 +125,8 @@ function TopNav(props) {
       </Box>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
- 
       </Box>
     </Box>
-
-
-  )};
-
-  export default TopNav;
+  )
+};
+export default TopNav;

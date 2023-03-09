@@ -1,3 +1,5 @@
+import '../index.css'
+
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -30,7 +32,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-function ProjectCard( {project}) {
+function ProjectCard({ project }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -42,11 +44,11 @@ function ProjectCard( {project}) {
     <Card sx={{ maxWidth: 345 }}>
       <Link to={`/projects/${project._id}`}>
         <CardMedia
-        component="img"
-        height="194"
-        image={project.images[0]?project.images[0]:default_project_image}
-        alt="Image Alt Text"
-      />
+          component="img"
+          height="194"
+          image={project.images[0] ? project.images[0] : default_project_image}
+          alt="Image Alt Text"
+        />
       </Link>
       <CardHeader
         avatar={
@@ -80,14 +82,14 @@ function ProjectCard( {project}) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography variant="button" sx={{fontWeight:700}}>Project Scope</Typography>
+          <Typography variant="button" sx={{ fontWeight: 700 }}>Project Scope</Typography>
           <Typography paragraph>
             Ipsum Lorem About the project
           </Typography>
           <Typography paragraph>
-Some other informartion about the creative process
+            Some other informartion about the creative process
           </Typography>
-          <Typography variant="button" sx={{fontWeight:700}}>Project Gallery</Typography>
+          <Typography variant="button" sx={{ fontWeight: 700 }}>Project Gallery</Typography>
           <Typography>
             IF POSSIBLE: Image Gallery?!
           </Typography>
