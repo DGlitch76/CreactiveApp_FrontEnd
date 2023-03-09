@@ -66,6 +66,7 @@ function NewProjectPage() {
           Create New Project
         </button>
       </form>
+      <button onClick={() => window.history.back()}>Go back to your profile</button>
     </div>
   );
 }

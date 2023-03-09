@@ -50,6 +50,7 @@ function Projects({ allProjects, setProjects }) {
           <ProjectCard project={project} images={allProjects} />
         </div>
       ))}
+      <button onClick={() => window.history.back()}>Go back to your profile</button>
     </div>
   </>
   )
