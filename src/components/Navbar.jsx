@@ -1,3 +1,5 @@
+import '../index.css'
+
 import { Link } from "react-router-dom";
 import { useContext } from "react";           
 import { SessionContext } from "../contexts/SessionContext";

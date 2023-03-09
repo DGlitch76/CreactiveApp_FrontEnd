@@ -1,4 +1,6 @@
-import { TextInput, Center, Checkbox, Button, Group, Box } from '@mantine/core';
+import '../index.css'
+
+import { TextInput,Center, Checkbox, Button, Group, Box } from '@mantine/core';
 import { useForm } from '@mantine/form';
 
 const AuthForm = ({username, password, email, setUsername, setPassword, setEmail, handleSubmit, isLogin = false}) => {
