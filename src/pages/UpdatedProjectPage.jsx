@@ -1,11 +1,25 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
 
-function NewProjectPage() {
+function UpdatedProjectPage() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [images, setImages] = useState('');
+  const { projectId } = useParams();
+
+  useEffect(() => {
+    const projectData = async () => {
+    const response = await axios.get(`http://localhost:5005/projects/updated/${projectId}`)
+    console.log(response.data)
+    setName(response.data.project.name)
+    setDescription(response.data.project.description)
+    setImages(response.data.project.images)
+    }
+    projectData()
+  }, [])
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,8 +34,8 @@ function NewProjectPage() {
 
     try {
       const newProject = { name, description, images };
-      const response = await axios.post(`http://localhost:5005/projects/new`, formData);
-      setImages(response.data)
+      const response = await axios.post(`http://localhost:5005/projects/${projectId}/update`, formData);
+      //setImages(response.data)
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -67,11 +81,11 @@ function NewProjectPage() {
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Create New Project
+          Update Project
         </button>
       </form>
     </div>
   );
 }
 
-export default NewProjectPage;
+export default UpdatedProjectPage;

@@ -57,7 +57,7 @@ function TopNav(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.text} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }} component="a" href={item.href}>
               <ListItemText primary={item.text}  />
             </ListItemButton>
@@ -74,7 +74,7 @@ function TopNav(props) {
       <Divider />
       <List>
         {navItems2.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.text} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }} component="a" href={item.href}>
               <ListItemText primary={item.text}  />
             </ListItemButton>
@@ -109,7 +109,7 @@ function TopNav(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }} component="a" href={item.href}>
+              <Button key={item.text} sx={{ color: '#fff' }} component="a" href={item.href}>
                 {item.text}
               </Button>
 

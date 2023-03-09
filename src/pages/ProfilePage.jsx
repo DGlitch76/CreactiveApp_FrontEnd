@@ -34,6 +34,7 @@ function ProfilePage() {
       {/* <p>Welcome, {user?(req.body.username):'Creative'}!</p> */}
       <p>Welcome, !</p>
       <button onClick={() => navigate('/projects')}>All Projects</button>
+      <button onClick={() => navigate('/projects/new')}>Create your Project</button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import '../index.css'
 
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import default_project_image from '../assets/default_project_image.jpeg';
 
@@ -38,7 +38,7 @@ function ProjectPage({ projects, setProjects }) {
           marginBottom: 100
         }}>
         {projects && projects.filter((project) => project._id === projectId).map((project) => (
-          <>
+          <div key={project._id} style={{ display: 'flex'}}>
             <div style={{ margin: 'auto' }}>
               <img src={project.images[0] ? project.images[0] : default_project_image}
                 alt={project.name}
@@ -52,9 +52,10 @@ function ProjectPage({ projects, setProjects }) {
               <h4>{project.client}</h4>
               <p>{project.owner}</p>
               <h6>{project.comments}</h6>
-              <button type='button' onClick={() => {handleDelete(project._id)}}>Delete Button</button>
             </div>
-          </>
+            <Link to={`/project/${project._id}`}><button type='button' >Update Button</button></Link>
+              <button type='button' onClick={() => {handleDelete(project._id)}}>Delete Button</button>
+          </div>
         ))}
       </div>
     </>

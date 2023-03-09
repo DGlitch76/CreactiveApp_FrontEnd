@@ -18,6 +18,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
 import logo from "./assets/logo_primary.svg";
+import UpdatedProjectPage from './pages/UpdatedProjectPage'
 
 
 function App() {
@@ -44,6 +45,8 @@ function App() {
         <Route path="/projects" element={<AllProjectsPage allProjects={allProjects} setProjects={setProjects}/>} />
 
         <Route path="/projects/:projectId" element={<ProjectPage projects={allProjects} setProjects={setProjects}/>} />
+        
+        <Route path="/project/:projectId" element={<UpdatedProjectPage/>} />
 
         <Route path="/projects/new" element={<NewProjectPage />} />
 
