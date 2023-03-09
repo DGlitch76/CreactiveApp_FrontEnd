@@ -36,7 +36,7 @@ function UpdatedProjectPage() {
     formData.append("description", description);
     console.log(formData, name, description)
     try {
-      const response = await axios.put(`http://localhost:5005/projects/${projectId}/update`, {name,description});
+      const response = await axios.put(`http://localhost:5005/projects/${projectId}/update`, {name,description, formData});
       //setImages(response.data)
       console.log(response.data);
     } catch (error) {

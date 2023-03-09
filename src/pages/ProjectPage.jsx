@@ -3,10 +3,16 @@ import '../index.css'
 import { useState, useEffect } from 'react'
 import { useParams, Link } from "react-router-dom";
 
+import Box from '@mui/material/Box';
+
 import default_project_image from '../assets/default_project_image.jpeg';
+
+
 
 function ProjectPage({ projects, setProjects }) {
   const { projectId } = useParams();
+
+  
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,11 +32,9 @@ function ProjectPage({ projects, setProjects }) {
   }, []);
 
   return (
-    <>
+    <> <Box sx={{  display: 'flex', flexDirection:{xs:'column'}, flexWrap:'wrap'}}>
       <div className="App container"
         style={{
-          display: 'flex',
-          flexWrap: 'wrap',
           marginBottom: 100
         }}>
         {projects && projects.filter((project) => project._id === projectId).map((project) => (
@@ -42,6 +46,7 @@ function ProjectPage({ projects, setProjects }) {
                   height: '70vh',
                 }} />
             </div>
+           
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'left', alignItems: 'self-start' }}>
               <h1>{project.name}</h1>
               <h2>{project.description}</h2>
@@ -49,12 +54,13 @@ function ProjectPage({ projects, setProjects }) {
               <p>{project.owner}</p>
               <h6>{project.comments}</h6>
             </div>
+           
             <Link to={`/project/${project._id}`}><button type='button' >Update Button</button></Link>
               <button type='button' onClick={() => {handleDelete(project._id)}}>Delete Button</button>
           </div>
         ))}
       </div>
-    </>
+    </Box> </>
   );
 }
 

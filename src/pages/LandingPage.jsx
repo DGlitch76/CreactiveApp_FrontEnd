@@ -104,8 +104,8 @@ function LandingPage({ allProjects, setProjects }) {
             alignItems: 'center',
             color: 'white'
           }}>
-            <h1 style={{fontSize:50, textAlign:'center'}}>BUILD UP YOUR TEAM</h1>
-            <p>Coming Soon</p>
+            <h1 style={{fontSize:50, textAlign:'center'}}>CONNECT EVERYTHING</h1>
+            <h4>Share on Instagram, Twitter, LinkedIn and more with One Click.</h4>
           </div>
           <video
             className="d-block vw-100 vh-100"
@@ -138,8 +138,8 @@ function LandingPage({ allProjects, setProjects }) {
             alignItems: 'center',
             color: 'white'
           }}>
-            <h1 style={{fontSize:50, textAlign:'center'}}>PROOF NETWORK</h1>
-            <p>Coming Soon</p>
+            <h1 style={{fontSize:50, textAlign:'center'}}>CREATIVE WORKFLOW</h1>
+            <h4>Manage Projects, Clients and Teams with Asana, Ziflow & Slack API's</h4>
           </div>
           <video
             className="d-block vw-100 vh-100"

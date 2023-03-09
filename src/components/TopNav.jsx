@@ -14,25 +14,34 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+
 //originally in the Navbar component
 import { Link } from "react-router-dom";
+
 import { useContext } from "react";
 import { SessionContext } from "../contexts/SessionContext";
 import ButtonLogout from "./ButtonLogout";
+
 const drawerWidth = '100vw';
+
 const navItems = [
     { text: 'Home', href: '/' },
     { text: 'Creative Profiles', href: '/projects' },
     { text: 'Proofing Room', href: '/ext' },
     { text: 'Signup', href: '/signup' },
-    { text: 'Login', href: '/login' }
+    { text: 'Login', href: '/login' },
+    { text: 'My Account', href: '/profile' },
 ];
+
 const navItems2 = [
   { text: 'Home', href: '/' },
   { text: 'Creative Profiles', href: '/projects' },
   { text: 'Proofing Room', href: '/ext' },
   { text: 'Logout', href: '/' },
 ];
+
+
+
 function TopNav(props) {
   const { isAuthenticate } = useContext(SessionContext);
   const { window } = props;
@@ -40,6 +49,8 @@ function TopNav(props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
       <Typography variant="h6" sx={{ my: 2 }}>
