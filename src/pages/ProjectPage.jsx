@@ -46,7 +46,7 @@ function ProjectPage({ projects, setProjects }) {
       justifyContent: 'center',
       flexWrap: 'wrap',
       maxWidth:'60%',
-      margin:'auto auto 200px auto'}}>
+      margin:'100px auto 200px auto'}}>
 
    
         {projects && projects.filter((project) => project._id === projectId).map((project) => (
