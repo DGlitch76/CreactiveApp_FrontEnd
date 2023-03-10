@@ -62,7 +62,7 @@ function ProjectCard({ project }) {
           </IconButton>
         }
         title={project.name}
-        subheader="toBe ${CATEGORY.INDUSTRY}"
+        subheader="Lorem Ipsum Industry Category"
       />
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
