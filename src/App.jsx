@@ -15,7 +15,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import logo from "./assets/logo_primary.svg";
 import UpdateProjectPage from './pages/UpdateProjectPage'
-import ExtAPI from './pages/extAPI'
+import ExtAPI from './pages/ExtAPI'
 import Ayrshare from './pages/Ayrshare'
 function App() {
   const [allProjects, setProjects] = useState();
