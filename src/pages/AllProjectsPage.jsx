@@ -18,7 +18,7 @@ function Projects({ allProjects, setProjects }) {
 
   //FETCH DATA FROM API
   useEffect(() => {
-    fetch(`http://localhost:5005/projects`)
+    fetch(`${import.meta.env.VITE_HOST}/projects`)
       .then((response) => response.json())
       .then((allProjects) => setProjects(allProjects))
       .catch((err) => {

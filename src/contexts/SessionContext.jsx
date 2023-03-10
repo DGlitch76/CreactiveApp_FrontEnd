@@ -2,6 +2,8 @@ import { createContext, useEffect, useState } from "react"
 //using context to store the token and make available during the app
 export const SessionContext = createContext()
 
+
+
 const SessionContextProvider = ({children}) => {
     const [isLoading,setIsLoading ] = useState(true)
     const [token, setToken] = useState()
@@ -11,7 +13,7 @@ const SessionContextProvider = ({children}) => {
     const verifyToken = async(jwt) => {
         if (jwt){
         try{
-            await fetch('http://localhost:5005/auth/verify', {
+            await fetch(`${import.meta.env.VITE_HOST}/auth/verify`, {
               method: 'POST',
               headers: {
                 'Authorization': `Bearer ${jwt}`

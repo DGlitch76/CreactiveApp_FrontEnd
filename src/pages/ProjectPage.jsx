@@ -6,6 +6,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import Box from '@mui/material/Box';
 
 import default_project_image from '../assets/default_project_image.jpeg';
+import { maxWidth } from '@mui/system';
 
 
 
@@ -19,7 +20,7 @@ function ProjectPage({ projects, setProjects }) {
 
   // FETCH DATA FROM API
   useEffect(() => {
-    fetch(`http://localhost:5005/projects`)
+    fetch(`${import.meta.env.VITE_HOST}/projects`)
       .then((response) => response.json())
       .then((projects) => setProjects(projects))
       .catch((err) => {
@@ -33,19 +34,23 @@ function ProjectPage({ projects, setProjects }) {
 
 
   const handleDelete = (currentProjectId) => {
-    fetch(`http://localhost:5005/projects/${currentProjectId}`, {method: 'DELETE'})
+    fetch(`${import.meta.env.VITE_HOST}/projects/${currentProjectId}`, {method: 'DELETE'})
     navigate('/projects');
   };
 
 
   return (
-    <> <Box sx={{  display: 'flex', flexDirection:{xs:'column'}, flexWrap:'wrap'}}>
-      <div className="App container"
-        style={{
-          marginBottom: 100
-        }}>
+    <> <div style={{ 
+      textAlign: 'center',
+      display: 'flex',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+      maxWidth:'60%',
+      margin:'auto auto 200px auto'}}>
+
+   
         {projects && projects.filter((project) => project._id === projectId).map((project) => (
-          <div key={project._id} style={{ display: 'flex'}}>
+          <div key={project._id}>
             <div style={{ margin: 'auto' }}>
               <img src={project.images[0] ? project.images[0] : default_project_image}
                 alt={project.name}
@@ -54,9 +59,9 @@ function ProjectPage({ projects, setProjects }) {
                 }} />
             </div>
            
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'left', alignItems: 'self-start' }}>
+            <div>
               <h1>{project.name}</h1>
-              <h2>{project.description}</h2>
+              <p style={{fontWeight:300}}>{project.description}</p>
               <h4>{project.client}</h4>
               <p>{project.owner}</p>
               <h6>{project.comments}</h6>
@@ -66,8 +71,8 @@ function ProjectPage({ projects, setProjects }) {
               <button type='button' onClick={() => {handleDelete(project._id)}}>Delete Button</button>
           </div>
         ))}
-      </div>
-    </Box> </>
+     
+   </div> </>
   );
 }
 

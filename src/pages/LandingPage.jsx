@@ -27,7 +27,7 @@ function LandingPage({ allProjects, setProjects }) {
 
   //FETCH DATA FROM API
   useEffect(() => {
-    fetch(`http://localhost:5005/projects`)
+    fetch(`${import.meta.env.VITE_HOST}/projects`)
       .then((response) => response.json())
       .then((allProjects) => setProjects(allProjects))
       .catch((err) => {
@@ -160,12 +160,14 @@ function LandingPage({ allProjects, setProjects }) {
       </Carousel>
     </div>
 
-    <div
+    <div className="App container"
       style={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: 20,
+        gap: 40,
         justifyContent: 'center',
+        alignSelf: 'flex-start',
+        marginTop: 50,
         marginBottom: 100
       }}>
 

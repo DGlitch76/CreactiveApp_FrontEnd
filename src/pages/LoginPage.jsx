@@ -18,7 +18,7 @@ const LoginPage = () => {
   const handleSubmit = async () => {
     try {
       console.log({ username, password })
-      const response = await fetch('http://localhost:5005/auth/login', {
+      const response = await fetch(`${import.meta.env.VITE_HOST}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

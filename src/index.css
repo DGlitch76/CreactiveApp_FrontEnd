@@ -115,3 +115,9 @@ font-weight: bolder;
     padding: 5px;
   }
 }
+
+.youtube-video {
+  aspect-ratio: 16 / 9;
+  margin: 20px;
+  border-radius: 20px;
+}

@@ -27,7 +27,7 @@ const drawerWidth = '100vw';
 const navItems = [
     { text: 'Home', href: '/' },
     { text: 'Creative Profiles', href: '/projects' },
-    { text: 'Proofing Room', href: '/ext' },
+    { text: 'External APIs', href: '/ext' },
     { text: 'Signup', href: '/signup' },
     { text: 'Login', href: '/login' },
     { text: 'My Account', href: '/profile' },
@@ -77,7 +77,7 @@ function TopNav(props) {
       <List>
         {navItems2.map((item) => (
           <ListItem key={item.text} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} component="a" href={item.href}>
+            <ListItemButton sx={{ textAlign: 'center', gap:30}} component="a" href={item.href}>
               <ListItemText primary={item.text}  />
             </ListItemButton>
           </ListItem>
@@ -109,7 +109,7 @@ function TopNav(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item.text} sx={{ color: '#fff' }} component="a" href={item.href}>
+              <Button key={item.text} sx={{ color: '#fff' , marginX:3 }} component="a" href={item.href}>
                 {item.text}
               </Button>
             ))}
