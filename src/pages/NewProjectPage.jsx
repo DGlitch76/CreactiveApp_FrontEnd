@@ -1,11 +1,19 @@
 import { React, useState } from 'react';
 import Navbar from '../components/Navbar';
+
+import {useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 
+
 function NewProjectPage() {
+
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [images, setImages] = useState('');
+
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     // onImages(e, project._id)
@@ -18,6 +26,7 @@ function NewProjectPage() {
       const newProject = { name, description, images };
       const response = await axios.post(`http://localhost:5005/projects/new`, formData);
       setImages(response.data)
+      navigate('/projects');
       console.log(response.data);
     } catch (error) {
       console.error(error);

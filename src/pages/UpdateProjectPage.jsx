@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
 
@@ -13,6 +13,8 @@ function UpdatedProjectPage() {
 
   const [formUpdate, setFormUpdate] = useState();
   const { projectId } = useParams();
+
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -36,8 +38,9 @@ function UpdatedProjectPage() {
     formData.append("description", description);
     console.log(formData, name, description)
     try {
-      const response = await axios.put(`http://localhost:5005/projects/${projectId}/update`, {name,description});
+      const response = await axios.put(`http://localhost:5005/projects/${projectId}/update`, {name,description, formData});
       //setImages(response.data)
+      navigate(`/projects/${projectId}`)
       console.log(response.data);
     } catch (error) {
       console.error(error);
