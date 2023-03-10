@@ -19,7 +19,7 @@ function ProjectPage({ projects, setProjects }) {
 
   // FETCH DATA FROM API
   useEffect(() => {
-    fetch(`http://localhost:5005/projects`)
+    fetch(`${import.meta.env.VITE_HOST}/projects`)
       .then((response) => response.json())
       .then((projects) => setProjects(projects))
       .catch((err) => {
@@ -33,19 +33,22 @@ function ProjectPage({ projects, setProjects }) {
 
 
   const handleDelete = (currentProjectId) => {
-    fetch(`http://localhost:5005/projects/${currentProjectId}`, {method: 'DELETE'})
+    fetch(`${import.meta.env.VITE_HOST}/projects/${currentProjectId}`, {method: 'DELETE'})
     navigate('/projects');
   };
 
 
   return (
-    <> <Box sx={{  display: 'flex', flexDirection:{xs:'column'}, flexWrap:'wrap'}}>
-      <div className="App container"
-        style={{
-          marginBottom: 100
-        }}>
+    <> <div style={{ 
+      textAlign: 'center',
+      marginBottom: 100, 
+      display: 'flex',
+      justifyContent: 'center',
+      flexWrap: 'wrap' }}>
+
+   
         {projects && projects.filter((project) => project._id === projectId).map((project) => (
-          <div key={project._id} style={{ display: 'flex'}}>
+          <div key={project._id}>
             <div style={{ margin: 'auto' }}>
               <img src={project.images[0] ? project.images[0] : default_project_image}
                 alt={project.name}
@@ -54,7 +57,7 @@ function ProjectPage({ projects, setProjects }) {
                 }} />
             </div>
            
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'left', alignItems: 'self-start' }}>
+            <div>
               <h1>{project.name}</h1>
               <h2>{project.description}</h2>
               <h4>{project.client}</h4>
@@ -66,8 +69,8 @@ function ProjectPage({ projects, setProjects }) {
               <button type='button' onClick={() => {handleDelete(project._id)}}>Delete Button</button>
           </div>
         ))}
-      </div>
-    </Box> </>
+     
+   </div> </>
   );
 }
 

@@ -83,14 +83,17 @@ function ProjectCard({ project }) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography variant="button" sx={{ fontWeight: 700 }}>Project Scope</Typography>
-          <Typography paragraph>
+          <Typography paragraph sx={{ fontWeight: 300 }}>
             Ipsum Lorem About the project
           </Typography>
-          <Typography paragraph>
-            Some other informartion about the creative process
+          <Typography paragraph sx={{ fontWeight: 200 }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Praesent vitae urna ante. Phasellus nec dui posuere, semper lectus vitae,
+          pretium arcu. Vestibulum vestibulum quis nisl eu eleifend. Cras quis diam sit amet
+          quam luctus convallis. Aliquam in turpis eu erat eleifend fringilla. 
           </Typography>
           <Typography variant="button" sx={{ fontWeight: 700 }}>Project Gallery</Typography>
-          <Typography>
+          <Typography sx={{ fontWeight: 200 }}>
             IF POSSIBLE: Image Gallery?!
           </Typography>
         </CardContent>

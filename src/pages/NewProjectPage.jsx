@@ -24,9 +24,9 @@ function NewProjectPage() {
     formData.append("description", description);
     try {
       const newProject = { name, description, images };
-      const response = await axios.post(`http://localhost:5005/projects/new`, formData);
+      const response = await axios.post(`${import.meta.env.VITE_HOST}/projects/new`, formData);
       setImages(response.data)
-      navigate('/projects');
+      navigate('/projects/' + response.data.project._id);
       console.log(response.data);
     } catch (error) {
       console.error(error);

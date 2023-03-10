@@ -19,7 +19,7 @@ function UpdatedProjectPage() {
 
   useEffect(() => {
     const projectData = async () => {
-    const response = await axios.get(`http://localhost:5005/projects/updated/${projectId}`)
+    const response = await axios.get(`${import.meta.env.VITE_HOST}/projects/updated/${projectId}`)
     console.log(response.data)
     setName(response.data.project.name)
     setDescription(response.data.project.description)
@@ -38,7 +38,7 @@ function UpdatedProjectPage() {
     formData.append("description", description);
     console.log(formData, name, description)
     try {
-      const response = await axios.put(`http://localhost:5005/projects/${projectId}/update`, {name,description, formData});
+      const response = await axios.put(`${import.meta.env.VITE_HOST}/projects/${projectId}/update`, {name,description, formData});
       //setImages(response.data)
       navigate(`/projects/${projectId}`)
       console.log(response.data);

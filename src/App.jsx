@@ -15,6 +15,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import logo from "./assets/logo_primary.svg";
 import UpdateProjectPage from './pages/UpdateProjectPage'
+import ExtAPI from './pages/extAPI'
+import Ayrshare from './pages/Ayrshare'
 function App() {
   const [allProjects, setProjects] = useState();
   return (
@@ -32,6 +34,9 @@ function App() {
         <Route path="/project/:projectId" element={<UpdateProjectPage/>} />
         <Route path="/projects/new" element={<NewProjectPage />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
+
+        <Route path="/ext" element={<ExtAPI />} />
+        <Route path="/ext/Ayrshare" element={<Ayrshare />} />
       </Routes>
       <Footer/>
     </div>
