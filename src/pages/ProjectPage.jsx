@@ -6,6 +6,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import Box from '@mui/material/Box';
 
 import default_project_image from '../assets/default_project_image.jpeg';
+import { maxWidth } from '@mui/system';
 
 
 
@@ -41,10 +42,11 @@ function ProjectPage({ projects, setProjects }) {
   return (
     <> <div style={{ 
       textAlign: 'center',
-      marginBottom: 100, 
       display: 'flex',
       justifyContent: 'center',
-      flexWrap: 'wrap' }}>
+      flexWrap: 'wrap',
+      maxWidth:'60%',
+      margin:'auto auto 200px auto'}}>
 
    
         {projects && projects.filter((project) => project._id === projectId).map((project) => (
@@ -59,7 +61,7 @@ function ProjectPage({ projects, setProjects }) {
            
             <div>
               <h1>{project.name}</h1>
-              <h2>{project.description}</h2>
+              <p style={{fontWeight:300}}>{project.description}</p>
               <h4>{project.client}</h4>
               <p>{project.owner}</p>
               <h6>{project.comments}</h6>
